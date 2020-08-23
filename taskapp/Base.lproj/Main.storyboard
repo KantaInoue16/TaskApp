@@ -55,24 +55,35 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hd-7i-Lsf">
-                                <rect key="frame" x="25" y="98" width="32" height="40"/>
-                                <state key="normal" title="検索"/>
+                                <rect key="frame" x="25" y="98" width="62" height="40"/>
+                                <state key="normal" title="絞り込み"/>
                                 <connections>
                                     <action selector="searchButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IxD-LW-bfy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6S-aA-rKm">
+                                <rect key="frame" x="327" y="98" width="67" height="40"/>
+                                <state key="normal" title="リセット"/>
+                                <connections>
+                                    <action selector="resetButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UdR-w4-KSN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vED-bQ-8pX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="4eg-u7-ceY"/>
-                            <constraint firstItem="fFG-19-F4K" firstAttribute="leading" secondItem="8Hd-7i-Lsf" secondAttribute="trailing" constant="50" id="9wQ-9e-AIR"/>
                             <constraint firstItem="8Hd-7i-Lsf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="B14-0H-G5I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J6S-aA-rKm" secondAttribute="trailing" constant="20" id="Q8n-aI-veJ"/>
                             <constraint firstItem="vED-bQ-8pX" firstAttribute="top" secondItem="8Hd-7i-Lsf" secondAttribute="bottom" constant="10" id="QeQ-nK-3Ip"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vED-bQ-8pX" secondAttribute="trailing" id="Scg-pu-63X"/>
                             <constraint firstItem="vED-bQ-8pX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U1B-4x-Bda"/>
                             <constraint firstItem="vED-bQ-8pX" firstAttribute="top" secondItem="fFG-19-F4K" secondAttribute="bottom" constant="10" id="VXE-B6-FMA"/>
+                            <constraint firstItem="vED-bQ-8pX" firstAttribute="top" secondItem="J6S-aA-rKm" secondAttribute="bottom" constant="10" id="av4-Dx-KsQ"/>
                             <constraint firstItem="fFG-19-F4K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bFR-R8-UbN"/>
+                            <constraint firstItem="fFG-19-F4K" firstAttribute="leading" secondItem="8Hd-7i-Lsf" secondAttribute="trailing" constant="20" id="jgg-H8-92I"/>
                             <constraint firstItem="fFG-19-F4K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="k33-CI-sgS"/>
+                            <constraint firstItem="J6S-aA-rKm" firstAttribute="leading" secondItem="fFG-19-F4K" secondAttribute="trailing" constant="20" id="kKc-Dk-Qxi"/>
+                            <constraint firstItem="J6S-aA-rKm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qYE-A2-ptM"/>
                             <constraint firstItem="8Hd-7i-Lsf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="vQH-k7-Ks9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vED-bQ-8pX" secondAttribute="bottom" id="zMb-ii-Ay3"/>
                         </constraints>
@@ -87,6 +98,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reSetButton" destination="J6S-aA-rKm" id="XkV-Mw-O9N"/>
                         <outlet property="resultButton" destination="8Hd-7i-Lsf" id="BJd-fM-ySc"/>
                         <outlet property="searchTextField" destination="fFG-19-F4K" id="SE6-u0-5yT"/>
                         <outlet property="tableView" destination="vED-bQ-8pX" id="fah-j4-5X8"/>

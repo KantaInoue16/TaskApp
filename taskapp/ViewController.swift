@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var resultButton: UIButton!
+    @IBOutlet weak var reSetButton: UIButton!
     
     // Realmインスタンスを取得する
     let realm = try! Realm()  // ←追加
@@ -54,7 +55,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dateString:String = formatter.string(from: task.date)
         cell.detailTextLabel?.text = dateString + task.category
         // --- ここまで追加 ---
-        
         return cell
     }
     // 各セルを選択した時に実行されるメソッド
@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    
+    // フィルタボタン
     @IBAction func searchButton(sender: UIButton) {
         if let categoryName = self.searchTextField.text {
             if categoryName == "" {
@@ -102,6 +102,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             taskArray = realm.objects(Task.self).filter("category == %@",categoryName)
             self.tableView.reloadData()
         }
+    }
+    // リセットボタン
+    @IBAction func resetButton(sender: UIButton) {
+        taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
+        self.tableView.reloadData()
     }
     
     // 各セルを選択した時に実行されるメソッド
